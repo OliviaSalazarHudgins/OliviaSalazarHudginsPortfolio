@@ -38,6 +38,11 @@
         display: none;
     }
 
+    /* Mobile-only home image (above widgets) */
+    .mobile-home-image {
+        display: none;
+    }
+
     @media only screen and (max-width: 430px) {
         #home {
             background-image: none;
@@ -111,6 +116,14 @@
         .widget.work-widget:hover,
         .widget.about-widget:hover {
             transform: translateY(-10px);
+        }
+
+        /* Mobile home image - shown above widgets */
+        .mobile-home-image {
+            display: block;
+            width: min(320px, 85vw);
+            height: auto;
+            margin: 0 auto;
         }
     }
 
@@ -999,6 +1012,8 @@
 
 ```
     <div class="widgets-container">
+        <!-- Mobile-only home image -->
+        <img class="mobile-home-image" src="https://i.imgur.com/SdWldly.png" alt="Homepage graphic">
         <div class="widget work-widget" onclick="navigate('work')">
             <img src="https://i.imgur.com/d4epqdb.png" alt="My Work">
         </div>
