@@ -49,52 +49,6 @@
             position: relative;
             background-color: #fafaf9;
         }
-        /* Mobile-only header */
-        .mobile-header-image {
-            display: none;
-        }
-        @media only screen and (max-width: 430px) {
-            #home {
-                background-image: none;
-                background-color: #fafaf9;
-            }
-            .mobile-header-image {
-                display: block;
-                width: 100%;
-                height: auto;
-                margin-bottom: 40px;
-            }
-            .mobile-header-image img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-            .widgets-container {
-                flex: 0;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 30px;
-                margin-top: 0;
-                padding: 0 20px 60px 20px;
-            }
-            .widget.work-widget,
-            .widget.about-widget {
-                max-width: 240px;
-                transform: none;
-                position: static;
-                left: 0;
-                top: 0;
-            }
-            .widget.work-widget:hover,
-            .widget.about-widget:hover {
-                transform: translateY(-10px);
-            }
-            .widget img {
-                max-width: 100%;
-            }
-        }
         .widgets-container {
             flex: 1;
             display: flex;
@@ -106,15 +60,7 @@
             margin-top: 200px;
         }
         .widget {
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .widget:hover {
-            transform: translateY(-15px);
-            filter: brightness(1.05);
-        }
-        .widget:active {
-            transform: translateY(-10px) scale(0.98);
+            transition: transform 0.3s ease;
         }
         .widget img {
             width: 100%;
@@ -122,10 +68,11 @@
             display: block;
         }
         .widget.work-widget {
-            max-width: 500px;
+            max-width: 380px;
             transform: rotate(-8deg);
             position: relative;
             left: -20px;
+            cursor: default;
         }
         .widget.work-widget:hover {
             transform: rotate(-8deg) translateY(-15px);
@@ -137,9 +84,93 @@
             left: -50px;
             z-index: 2;
             transform: rotate(5deg);
+            cursor: pointer;
         }
         .widget.about-widget:hover {
             transform: rotate(5deg) translateY(-15px);
+        }
+        /* Note card widget */
+        .note-card-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .binder-clip {
+            position: relative;
+            z-index: 2;
+            margin-bottom: -3px;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+        }
+        .note-card {
+            background: white;
+            width: 280px;
+            padding: 40px 40px 48px;
+            filter: drop-shadow(0 8px 24px rgba(0,0,0,0.12));
+            clip-path: polygon(
+                0% 1.5%, 2.5% 0%, 5% 1.8%, 8% 0.2%, 11% 1.5%, 14% 0.3%,
+                17% 1.8%, 20% 0%, 23% 1.5%, 26% 0.5%, 29% 1.8%, 32% 0%,
+                35% 1.5%, 38% 0.3%, 41% 1.8%, 44% 0%, 47% 1.5%, 50% 0.5%,
+                53% 1.8%, 56% 0%, 59% 1.5%, 62% 0.3%, 65% 1.8%, 68% 0%,
+                71% 1.5%, 74% 0.5%, 77% 1.8%, 80% 0%, 83% 1.5%, 86% 0.3%,
+                89% 1.8%, 92% 0%, 95% 1.5%, 97.5% 0.2%, 100% 1.5%,
+                100% 98.5%, 97.5% 100%, 95% 98.2%, 92% 100%, 89% 98.5%,
+                86% 99.7%, 83% 98.5%, 80% 100%, 77% 98.2%, 74% 99.5%,
+                71% 98.5%, 68% 100%, 65% 98.2%, 62% 99.7%, 59% 98.5%,
+                56% 100%, 53% 98.2%, 50% 99.5%, 47% 98.5%, 44% 100%,
+                41% 98.2%, 38% 99.7%, 35% 98.5%, 32% 100%, 29% 98.2%,
+                26% 99.5%, 23% 98.5%, 20% 100%, 17% 98.2%, 14% 99.7%,
+                11% 98.5%, 8% 99.8%, 5% 98.2%, 2.5% 100%, 0% 98.5%
+            );
+        }
+        .note-link {
+            display: block;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-align: center;
+            padding: 10px 0;
+            letter-spacing: 0.05em;
+            transition: opacity 0.25s ease;
+            cursor: pointer;
+            user-select: none;
+        }
+        .note-link:hover {
+            opacity: 0.35;
+        }
+        @media only screen and (max-width: 430px) {
+            #home {
+                background-image: none;
+                background-color: #fafaf9;
+            }
+            .widgets-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                margin-top: 40px;
+                padding: 0 20px 60px 20px;
+            }
+            .widget.work-widget,
+            .widget.about-widget {
+                transform: none;
+                position: static;
+                left: 0;
+                top: 0;
+            }
+            .widget.work-widget:hover {
+                transform: translateY(-10px);
+            }
+            .widget.about-widget:hover {
+                transform: translateY(-10px);
+            }
+            .note-card {
+                width: 240px;
+                padding: 32px 28px 38px;
+            }
+            .note-link {
+                font-size: 0.78rem;
+                padding: 8px 0;
+            }
         }
         /* Footer */
         .footer {
@@ -875,19 +906,27 @@
             align-items: center;
             justify-content: center;
         }
+        /* Small arrows inside modals */
+        .modal .carousel-nav {
+            padding: 10px 13px;
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
     <!-- HOME PAGE -->
     <div id="home">
-        <!-- Mobile-only Header Image -->
-        <div class="mobile-header-image">
-            <img src="https://i.imgur.com/SdWldly.png" alt="">
-        </div>
-
         <div class="widgets-container">
-            <div class="widget work-widget" onclick="navigate('work')">
-                <img src="https://i.imgur.com/d4epqdb.png" alt="My Work">
+            <div class="widget work-widget">
+                <div class="note-card-wrap">
+                    <div class="note-card">
+                        <div class="note-link" onclick="navigate('creative')">creative production</div>
+                        <div class="note-link" onclick="navigate('photovideo')">photo + video content</div>
+                        <div class="note-link" onclick="navigate('socialmedia')">social media</div>
+                        <div class="note-link" onclick="window.open('https://substack.com/@oliviasalazzar','_blank')">written work</div>
+                        <div class="note-link" onclick="navigate('events')">event production</div>
+                    </div>
+                </div>
             </div>
             <div class="widget about-widget" onclick="navigate('about')">
                 <img src="https://i.imgur.com/Ux6DKxL.png" alt="About Me">
@@ -1027,7 +1066,7 @@
     </div>
     <!-- THE ANTEROS PROJECT -->
     <div id="anteros" class="page">
-        <button class="back-button" onclick="navigate('work')">&larr; Back to My Work</button>
+        <button class="back-button" onclick="navigate('home')">&larr; Back</button>
 
         <!-- Hero Section -->
         <div class="anteros-hero">
@@ -1115,6 +1154,7 @@
                     </div>
                     <div>
                         <p>Anteros Chapter III expanded the brand's assortment with additional styles, new colorways, and the introduction of merino wool. Supported the launch through hands-on involvement in design and pattern discussions, contributing to decision-making around silhouettes, materials, and production considerations. Worked closely with the Creative Director and Founder to coordinate shoot-day logistics, prepare styling documents, lookbooks, and mood boards, and served as a production assistant on set for both editorial and e-commerce shoots. Ensured schedules, assets, and on-set needs were executed efficiently to support a smooth production workflow from pre-production through final capture.</p>
+                        <p style="margin-top: 20px;"><span onclick="openChapterCreativeModal()" style="cursor: pointer; color: #1a1a1a; font-family: 'Inter', sans-serif; font-size: 1rem; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">view creative process here</span></p>
                     </div>
                 </div>
 
@@ -1137,6 +1177,26 @@
             </div>
         </div>
     </div>
+    <div id="chapterCreativeModal" class="modal" style="z-index: 1100;" onclick="closeChapterCreativeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()" style="max-width: 800px; margin: 0 auto; padding: 60px 40px;">
+            <button class="close-btn" onclick="closeChapterCreativeModal()" style="z-index: 1101;">&times;</button>
+            <h2 class="modal-title" style="font-size: 2rem; margin-bottom: 30px;">Creative Process</h2>
+            <div style="position: relative; overflow: hidden;">
+                <div id="chapterCreativeCarousel" style="display: flex; transition: transform 0.4s ease;">
+                    <div class="carousel-wrap"><img src="https://i.imgur.com/gQpSQ31.png" alt="Creative Process 1" style="max-width: 100%; max-height: 70vh; object-fit: contain;"></div>
+                    <div class="carousel-wrap"><img src="https://i.imgur.com/98AtqSl.jpeg" alt="Creative Process 2" style="max-width: 100%; max-height: 70vh; object-fit: contain;"></div>
+                    <div class="carousel-wrap"><img src="https://i.imgur.com/7t6EQyh.jpeg" alt="Creative Process 3" style="max-width: 100%; max-height: 70vh; object-fit: contain;"></div>
+                    <div class="carousel-wrap"><img src="https://i.imgur.com/dMjj0kv.jpeg" alt="Creative Process 4" style="max-width: 100%; max-height: 70vh; object-fit: contain;"></div>
+                    <div class="carousel-wrap"><img src="https://i.imgur.com/YCDmyRR.jpeg" alt="Creative Process 5" style="max-width: 100%; max-height: 70vh; object-fit: contain;"></div>
+                    <div class="carousel-wrap"><img src="https://i.imgur.com/anK0NO2.png" alt="Creative Process 6" style="max-width: 100%; max-height: 70vh; object-fit: contain;"></div>
+                </div>
+                <button class="carousel-nav prev" onclick="moveChapterCarousel(-1)">&#8592;</button>
+                <button class="carousel-nav next" onclick="moveChapterCarousel(1)">&#8594;</button>
+            </div>
+            <div id="chapterCreativeDots" style="display: flex; justify-content: center; gap: 8px; margin-top: 16px;"></div>
+        </div>
+    </div>
+
     <div id="anterosSocialModal" class="modal" onclick="closeAnterosModal('social')">
         <div class="modal-content" onclick="event.stopPropagation()" style="max-width: 1000px; margin: 0 auto; padding: 60px 40px;">
             <button class="close-btn" onclick="closeAnterosModal('social')">&times;</button>
@@ -1258,7 +1318,7 @@
     </div>
     <!-- THE ARCHIVE FASHION SHOW -->
     <div id="archive" class="page">
-        <button class="back-button" onclick="navigate('work')">&larr; Back to My Work</button>
+        <button class="back-button" onclick="navigate('home')">&larr; Back</button>
         <h2 class="page-title">The Archive &mdash; Fashion Show</h2>
 
         <!-- Role 1: Head of Media and Creative Direction -->
@@ -1316,7 +1376,7 @@
     </div>
     <!-- RUE A VOUS -->
     <div id="rue" class="page">
-        <button class="back-button" onclick="navigate('work')">&larr; Back to My Work</button>
+        <button class="back-button" onclick="navigate('home')">&larr; Back</button>
         <h2 class="page-title" style="margin-bottom: 15px;">Rue &acirc; Vous</h2>
         <div style="text-align: center; margin-bottom: 60px;">
             <a href="https://www.instagram.com/rueavous?igsh=MWV0MHIzeXZuY2M0aw==" target="_blank" rel="noopener" style="display: inline-block; font-size: 1rem; color: #1a1a1a; text-decoration: none; font-family: 'Inter', sans-serif; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">@rueavous</a>
@@ -1324,8 +1384,9 @@
 
         <div class="role-detail">
             <h3>Creative Director</h3>
+            <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.3px; margin-bottom: 20px;">All photos taken by me</p>
             <p>Directing the visual identity, brand narrative, and creative strategy for Rue &agrave; Vous, a fine jewelry brand rooted in storytelling and timeless design. Currently overseeing concept development, aesthetic direction, and launch planning.</p>
-            <p>Work coming soon.</p>
+            <p style="margin-top: 20px;"><span onclick="openRueProcessModal()" style="cursor: pointer; color: #1a1a1a; font-family: 'Inter', sans-serif; font-size: 1rem; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">view creative process here</span></p>
             <div style="margin-top: 40px; text-align: center;">
                 <img src="https://i.imgur.com/aaHKxVl.png" alt="Rue &agrave; Vous" style="max-width: 100%; height: auto; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
             </div>
@@ -1339,9 +1400,31 @@
             </div>
         </div>
     </div>
+    <!-- RUE A VOUS - Creative Process Modal -->
+    <div id="rueProcessModal" class="modal" onclick="closeRueProcessModal()">
+        <div class="modal-content" onclick="event.stopPropagation()" style="max-width: 900px; margin: 0 auto; padding: 60px 40px;">
+            <button class="close-btn" onclick="closeRueProcessModal()">&times;</button>
+            <h2 class="modal-title" style="font-size: 2.5rem; margin-bottom: 40px;">Creative Process</h2>
+            <div class="carousel-container">
+                <div class="carousel-slides" id="rueCarousel">
+                    <img src="https://i.imgur.com/PWmBoF0.jpeg" alt="" class="carousel-slide">
+                    <img src="https://i.imgur.com/v1Otlk4.jpeg" alt="" class="carousel-slide">
+                    <img src="https://i.imgur.com/Gq9FyOp.jpeg" alt="" class="carousel-slide">
+                    <img src="https://i.imgur.com/i2Fyi5I.jpeg" alt="" class="carousel-slide">
+                    <img src="https://i.imgur.com/28Bayf7.jpeg" alt="" class="carousel-slide">
+                    <img src="https://i.imgur.com/Z0pc7gm.jpeg" alt="" class="carousel-slide">
+                    <img src="https://i.imgur.com/xFBJPB6.jpeg" alt="" class="carousel-slide">
+                    <img src="https://i.imgur.com/RP1lV6p.jpeg" alt="" class="carousel-slide">
+                </div>
+                <button class="carousel-nav prev" onclick="moveRueCarousel(-1); event.stopPropagation();">&#10094;</button>
+                <button class="carousel-nav next" onclick="moveRueCarousel(1); event.stopPropagation();">&#10095;</button>
+            </div>
+            <div class="carousel-dots" id="rueCarouselDots"></div>
+        </div>
+    </div>
     <!-- THEMALL.APP -->
     <div id="themall" class="page">
-        <button class="back-button" onclick="navigate('work')">&larr; Back to My Work</button>
+        <button class="back-button" onclick="navigate('home')">&larr; Back</button>
         <h2 class="page-title">themall.app</h2>
 
         <div class="role-detail">
@@ -1379,6 +1462,95 @@
             </div>
         </div>
     </div>
+    <!-- CREATIVE PRODUCTION -->
+    <div id="creative" class="page">
+        <button class="back-button" onclick="navigate('home')">&larr; Back</button>
+        <h2 class="page-title">Creative Production</h2>
+        <div class="work-grid">
+            <div class="work-item">
+                <div class="work-box" onclick="navigate('anteros')">
+                    <img src="https://i.imgur.com/2vVGnTQ.png" alt="The Anteros">
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-box" onclick="navigate('rue')">
+                    <img src="https://i.imgur.com/DCEulLC.png" alt="Rue &agrave; Vous">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHOTO + VIDEO CONTENT -->
+    <div id="photovideo" class="page">
+        <button class="back-button" onclick="navigate('home')">&larr; Back</button>
+        <h2 class="page-title">Photo + Video</h2>
+        <div class="work-grid">
+            <div class="work-item">
+                <div class="work-box" onclick="navigate('anteros')">
+                    <img src="https://i.imgur.com/2vVGnTQ.png" alt="The Anteros">
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-box" onclick="navigate('themall')">
+                    <img src="https://i.imgur.com/zUdBsCa.png" alt="themall.app">
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-box" onclick="navigate('rue')">
+                    <img src="https://i.imgur.com/DCEulLC.png" alt="Rue &agrave; Vous">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div id="socialmedia" class="page">
+        <button class="back-button" onclick="navigate('home')">&larr; Back</button>
+        <h2 class="page-title">Social Media</h2>
+        <div class="work-grid">
+            <div class="work-item">
+                <div class="work-box" onclick="navigate('anteros')">
+                    <img src="https://i.imgur.com/2vVGnTQ.png" alt="The Anteros">
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-box" onclick="navigate('themall')">
+                    <img src="https://i.imgur.com/zUdBsCa.png" alt="themall.app">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WRITTEN WORK -->
+    <div id="written" class="page">
+        <button class="back-button" onclick="navigate('home')">&larr; Back</button>
+        <h2 class="page-title">Written Work</h2>
+        <div class="role-detail" style="text-align: center; max-width: 600px; margin: 60px auto;">
+            <h3 style="margin-bottom: 25px;">Substack</h3>
+            <p>Writing about how culture, history, and societal trends show up in fashion.</p>
+            <br>
+            <a href="https://substack.com/@oliviasalazzar" target="_blank" rel="noopener" class="modal-link" style="font-size: 1.1rem;">@oliviasalazzar &rarr;</a>
+        </div>
+    </div>
+
+    <!-- EVENT PRODUCTION -->
+    <div id="events" class="page">
+        <button class="back-button" onclick="navigate('home')">&larr; Back</button>
+        <h2 class="page-title">Event Production</h2>
+        <div class="work-grid">
+            <div class="work-item">
+                <div class="work-box" onclick="navigate('anteros')">
+                    <img src="https://i.imgur.com/2vVGnTQ.png" alt="The Anteros">
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-box" onclick="navigate('archive')">
+                    <img src="https://i.imgur.com/PcBCMTd.png" alt="The Archive Fashion Show">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Click sound
         function playClickSound() {
@@ -1588,6 +1760,88 @@
             clearInterval(autoSlideInterval);
             startAutoSlide();
         }
+        // Rue à Vous Creative Process Modal
+        let rueSlide = 0;
+        const rueTotalSlides = 8;
+        function openRueProcessModal() {
+            playClickSound();
+            rueSlide = 0;
+            document.getElementById('rueProcessModal').classList.add('active');
+            initRueCarousel();
+            updateRueCarousel();
+        }
+        function closeRueProcessModal() {
+            playClickSound();
+            document.getElementById('rueProcessModal').classList.remove('active');
+        }
+        function initRueCarousel() {
+            const dotsContainer = document.getElementById('rueCarouselDots');
+            if (dotsContainer && dotsContainer.children.length === 0) {
+                for (let i = 0; i < rueTotalSlides; i++) {
+                    const dot = document.createElement('span');
+                    dot.className = 'carousel-dot';
+                    if (i === 0) dot.classList.add('active');
+                    dot.onclick = () => { rueSlide = i; updateRueCarousel(); };
+                    dotsContainer.appendChild(dot);
+                }
+            }
+        }
+        function moveRueCarousel(direction) {
+            playClickSound();
+            rueSlide += direction;
+            if (rueSlide < 0) rueSlide = rueTotalSlides - 1;
+            else if (rueSlide >= rueTotalSlides) rueSlide = 0;
+            updateRueCarousel();
+        }
+        function updateRueCarousel() {
+            const carousel = document.getElementById('rueCarousel');
+            if (carousel) {
+                carousel.style.transform = `translateX(-${rueSlide * 100}%)`;
+                const dots = document.querySelectorAll('#rueCarouselDots .carousel-dot');
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === rueSlide));
+            }
+        }
+        // Chapter III creative process carousel
+        let chapterCreativeSlide = 0;
+        const chapterCreativeTotalSlides = 6;
+
+        function openChapterCreativeModal() {
+            playClickSound();
+            chapterCreativeSlide = 0;
+            document.getElementById('chapterCreativeModal').classList.add('active');
+            initChapterCreativeCarousel();
+            updateChapterCreativeCarousel();
+        }
+        function closeChapterCreativeModal() {
+            playClickSound();
+            document.getElementById('chapterCreativeModal').classList.remove('active');
+        }
+        function initChapterCreativeCarousel() {
+            const dots = document.getElementById('chapterCreativeDots');
+            if (!dots) return;
+            dots.innerHTML = '';
+            for (let i = 0; i < chapterCreativeTotalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => { chapterCreativeSlide = i; updateChapterCreativeCarousel(); };
+                dots.appendChild(dot);
+            }
+        }
+        function moveChapterCarousel(direction) {
+            chapterCreativeSlide += direction;
+            if (chapterCreativeSlide < 0) chapterCreativeSlide = chapterCreativeTotalSlides - 1;
+            else if (chapterCreativeSlide >= chapterCreativeTotalSlides) chapterCreativeSlide = 0;
+            updateChapterCreativeCarousel();
+        }
+        function updateChapterCreativeCarousel() {
+            const carousel = document.getElementById('chapterCreativeCarousel');
+            if (carousel) {
+                carousel.style.transform = `translateX(-${chapterCreativeSlide * 100}%)`;
+                const dots = document.querySelectorAll('#chapterCreativeDots .carousel-dot');
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === chapterCreativeSlide));
+            }
+        }
+
         // Initialize carousel when page loads
         window.addEventListener('load', initCarousel);
     </script>
