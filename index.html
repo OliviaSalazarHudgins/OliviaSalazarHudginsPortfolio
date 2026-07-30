@@ -21,7 +21,7 @@
     <meta name="twitter:description" content="Creative direction, social media, and editorial production across fashion, events, and digital platforms.">
     <meta name="twitter:image" content="https://i.imgur.com/lkFT6bK.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -30,154 +30,122 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: #fafaf9;
-            color: #1a1a1a;
+            font-family: 'EB Garamond', serif;
+            background: #fff;
+            color: #111;
         }
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'EB Garamond', serif;
         }
         /* Home Page */
         #home {
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            background-image: url('https://i.imgur.com/lkFT6bK.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            background-color: #fafaf9;
+            background: #fff;
+            overflow: hidden;
         }
-        .widgets-container {
+        .home-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 26px 44px;
+            flex-shrink: 0;
+        }
+        .home-name {
+            font-family: 'EB Garamond', serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #111;
+        }
+        .home-nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        .home-nav-links a {
+            font-family: 'EB Garamond', serif;
+            font-size: 0.95rem;
+            color: #999;
+            text-decoration: none;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+        .home-nav-links a:hover { color: #111; }
+        .home-main {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 0;
+        }
+        .home-left {
+            overflow: hidden;
+            position: relative;
+        }
+        .home-right {
+            display: flex;
+            flex-direction: column;
+            padding: 32px 52px 40px;
+        }
+        .home-bio {
+            font-family: 'EB Garamond', serif;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: #aaa;
+            max-width: 300px;
+            margin-bottom: 0;
+        }
+        .home-categories {
             flex: 1;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0;
-            padding: 0 0 80px 0;
-            position: relative;
-            margin-top: 200px;
-        }
-        .widget {
-            transition: transform 0.3s ease;
-        }
-        .widget img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .widget.work-widget {
-            max-width: 380px;
-            transform: rotate(-8deg);
-            position: relative;
-            left: -20px;
-            cursor: default;
-        }
-        .widget.work-widget:hover {
-            transform: rotate(-8deg) translateY(-15px);
-        }
-        .widget.about-widget {
-            max-width: 240px;
-            position: relative;
-            top: 20px;
-            left: -50px;
-            z-index: 2;
-            transform: rotate(5deg);
-            cursor: pointer;
-        }
-        .widget.about-widget:hover {
-            transform: rotate(5deg) translateY(-15px);
-        }
-        /* Note card widget */
-        .note-card-wrap {
-            display: flex;
             flex-direction: column;
-            align-items: center;
+            justify-content: space-evenly;
         }
-        .binder-clip {
-            position: relative;
-            z-index: 2;
-            margin-bottom: -3px;
-            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
-        }
-        .note-card {
-            background: white;
-            width: 280px;
-            padding: 40px 40px 48px;
-            filter: drop-shadow(0 8px 24px rgba(0,0,0,0.12));
-            clip-path: polygon(
-                0% 1.5%, 2.5% 0%, 5% 1.8%, 8% 0.2%, 11% 1.5%, 14% 0.3%,
-                17% 1.8%, 20% 0%, 23% 1.5%, 26% 0.5%, 29% 1.8%, 32% 0%,
-                35% 1.5%, 38% 0.3%, 41% 1.8%, 44% 0%, 47% 1.5%, 50% 0.5%,
-                53% 1.8%, 56% 0%, 59% 1.5%, 62% 0.3%, 65% 1.8%, 68% 0%,
-                71% 1.5%, 74% 0.5%, 77% 1.8%, 80% 0%, 83% 1.5%, 86% 0.3%,
-                89% 1.8%, 92% 0%, 95% 1.5%, 97.5% 0.2%, 100% 1.5%,
-                100% 98.5%, 97.5% 100%, 95% 98.2%, 92% 100%, 89% 98.5%,
-                86% 99.7%, 83% 98.5%, 80% 100%, 77% 98.2%, 74% 99.5%,
-                71% 98.5%, 68% 100%, 65% 98.2%, 62% 99.7%, 59% 98.5%,
-                56% 100%, 53% 98.2%, 50% 99.5%, 47% 98.5%, 44% 100%,
-                41% 98.2%, 38% 99.7%, 35% 98.5%, 32% 100%, 29% 98.2%,
-                26% 99.5%, 23% 98.5%, 20% 100%, 17% 98.2%, 14% 99.7%,
-                11% 98.5%, 8% 99.8%, 5% 98.2%, 2.5% 100%, 0% 98.5%
-            );
-        }
-        .note-link {
-            display: block;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            text-align: center;
-            padding: 10px 0;
-            letter-spacing: 0.05em;
-            transition: opacity 0.25s ease;
+        .home-category {
             cursor: pointer;
-            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 0;
         }
-        .note-link:hover {
-            opacity: 0.35;
+        .home-cat-name {
+            font-family: 'EB Garamond', serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #111;
+            transition: opacity 0.2s;
         }
-        @media only screen and (max-width: 430px) {
-            #home {
-                background-image: none;
-                background-color: #fafaf9;
-            }
-            .widgets-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
-                margin-top: 40px;
-                padding: 0 20px 60px 20px;
-            }
-            .widget.work-widget,
-            .widget.about-widget {
-                transform: none;
-                position: static;
-                left: 0;
-                top: 0;
-            }
-            .widget.work-widget:hover {
-                transform: translateY(-10px);
-            }
-            .widget.about-widget:hover {
-                transform: translateY(-10px);
-            }
-            .note-card {
-                width: 240px;
-                padding: 32px 28px 38px;
-            }
-            .note-link {
-                font-size: 0.78rem;
-                padding: 8px 0;
-            }
+        .home-cat-sub {
+            font-family: 'EB Garamond', serif;
+            font-size: 0.88rem;
+            color: #bbb;
+            margin-top: 2px;
+            font-style: italic;
+        }
+        .home-cat-arrow {
+            font-family: 'EB Garamond', serif;
+            font-size: 0.9rem;
+            color: #ccc;
+            transition: transform 0.2s, color 0.2s;
+            flex-shrink: 0;
+        }
+        .home-category:hover .home-cat-name { opacity: 0.35; }
+        .home-category:hover .home-cat-arrow { transform: translateX(4px); color: #111; }
+        /* Cursor-following popup image */
+        #homePopupImg {
+            position: fixed;
+            pointer-events: none;
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+            z-index: 500;
         }
         /* Footer */
         .footer {
             width: 100%;
-            padding: 40px 40px;
-            background: rgba(250, 250, 249, 0.97);
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 40px 44px;
+            background: #fff;
         }
         .footer-content {
             max-width: 1000px;
@@ -192,18 +160,16 @@
             text-align: center;
         }
         .footer-title {
-            font-size: 0.85rem;
-            color: #1a1a1a;
-            font-weight: 500;
+            font-size: 1rem;
+            color: #999;
+            font-weight: 400;
             margin-bottom: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
             cursor: pointer;
-            transition: opacity 0.3s, color 0.3s;
-            font-family: 'Inter', sans-serif;
+            transition: color 0.2s;
+            font-family: 'EB Garamond', serif;
         }
         .footer-title:hover {
-            opacity: 0.6;
+            color: #111;
         }
         /* Modal */
         .modal {
@@ -250,87 +216,84 @@
             color: #1a1a1a;
         }
         .modal-title {
-            font-size: 4rem;
-            color: #1a1a1a;
-            margin-bottom: 50px;
-            font-weight: 500;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: -1.5px;
+            font-size: 3rem;
+            color: #111;
+            margin-bottom: 40px;
+            font-weight: 400;
+            font-family: 'EB Garamond', serif;
+            letter-spacing: 0;
             text-align: center;
         }
         .modal-text {
-            font-size: 1.25rem;
-            color: #4a4a4a;
-            line-height: 2;
-            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.9;
+            font-family: 'EB Garamond', serif;
             font-weight: 400;
             max-width: 900px;
             margin: 0 auto;
         }
         .modal-link {
-            color: #1a1a1a;
+            color: #111;
             text-decoration: none;
-            transition: opacity 0.3s;
-            border-bottom: 1px solid #1a1a1a;
+            transition: opacity 0.2s;
+            border-bottom: 1px solid #ccc;
             padding-bottom: 2px;
         }
         .modal-link:hover {
-            opacity: 0.6;
+            opacity: 0.5;
         }
         .social-item {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
         .social-platform {
-            font-weight: 500;
-            color: #1a1a1a;
-            letter-spacing: 0.5px;
+            font-weight: 400;
+            color: #aaa;
+            font-style: italic;
         }
         /* Pages */
         .page {
             display: none;
             min-height: 100vh;
-            padding: 30px 20px;
-            background: #fafaf9;
+            padding: 30px 44px;
+            background: #fff;
         }
         .page.active {
             display: block;
         }
         .back-button {
             background: transparent;
-            color: #1a1a1a;
-            border: 1px solid #1a1a1a;
-            padding: 12px 28px;
-            font-size: 0.85rem;
+            color: #999;
+            border: none;
+            padding: 0;
+            font-size: 0.95rem;
             cursor: pointer;
-            border-radius: 0;
-            margin-bottom: 40px;
-            transition: all 0.3s;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 500;
+            margin-bottom: 48px;
+            transition: color 0.2s;
+            font-family: 'EB Garamond', serif;
+            font-weight: 400;
+            display: block;
         }
         .back-button:hover {
-            background: #1a1a1a;
-            color: white;
+            color: #111;
         }
         .page-title {
-            font-size: 5rem;
-            color: #1a1a1a;
-            margin-bottom: 60px;
+            font-size: 3.5rem;
+            color: #111;
+            margin-bottom: 52px;
             text-align: center;
-            font-weight: 500;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: -2px;
+            font-weight: 400;
+            font-family: 'EB Garamond', serif;
+            letter-spacing: -0.5px;
         }
         /* About Me */
         .about-content {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
-            font-size: 1.25rem;
-            line-height: 2;
-            color: #4a4a4a;
-            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #555;
+            font-family: 'EB Garamond', serif;
             font-weight: 400;
         }
         /* Work Grid */
@@ -386,83 +349,76 @@
             margin: 40px auto;
         }
         .subsection-box {
-            background: #1a1a1a;
-            color: white;
-            padding: 60px 30px;
+            background: #fff;
+            color: #111;
+            padding: 48px 30px;
             text-align: center;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             border-radius: 0;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: 500;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border: 1px solid #1a1a1a;
+            transition: opacity 0.2s;
+            font-weight: 400;
+            font-family: 'EB Garamond', serif;
+            border: 1px solid #e8e8e8;
         }
         .subsection-box:hover {
-            transform: scale(1.02);
-            background: white;
-            color: #1a1a1a;
+            opacity: 0.5;
         }
         .role-description {
             text-align: center;
-            font-size: 1.4rem;
-            color: #4a4a4a;
+            font-size: 1.15rem;
+            color: #aaa;
             margin-top: 30px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'EB Garamond', serif;
             font-weight: 400;
+            font-style: italic;
         }
         /* Archive Role Detail Pages */
         .role-detail {
-            max-width: 900px;
-            margin: 60px auto;
-            background: white;
-            padding: 60px 70px;
+            max-width: 860px;
+            margin: 48px auto;
+            background: #fff;
+            padding: 48px 0;
             border-radius: 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-            border: 1px solid rgba(0,0,0,0.05);
         }
         .role-detail h3 {
-            font-size: 2.8rem;
-            color: #1a1a1a;
-            margin-bottom: 25px;
-            font-weight: 500;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: -1px;
+            font-size: 2rem;
+            color: #111;
+            margin-bottom: 20px;
+            font-weight: 400;
+            font-family: 'EB Garamond', serif;
+            letter-spacing: 0;
         }
         .role-detail p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             line-height: 1.9;
-            color: #4a4a4a;
-            margin-bottom: 40px;
-            font-family: 'Inter', sans-serif;
+            color: #555;
+            margin-bottom: 32px;
+            font-family: 'EB Garamond', serif;
             font-weight: 400;
         }
         /* Dropdown/Accordion */
         .dropdown-section {
             margin-top: 40px;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            padding-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            padding-top: 24px;
         }
         .dropdown-header {
-            background: #1a1a1a;
-            color: white;
-            padding: 18px 30px;
-            font-size: 1.1rem;
-            font-weight: 500;
+            background: transparent;
+            color: #111;
+            padding: 14px 0;
+            font-size: 1rem;
+            font-weight: 400;
             cursor: pointer;
             border-radius: 0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.2s;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            font-family: 'EB Garamond', serif;
         }
         .dropdown-header:hover {
-            background: #2a2a2a;
+            opacity: 0.5;
         }
         .dropdown-arrow {
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -486,12 +442,12 @@
             margin-bottom: 50px;
         }
         .media-subsection h4 {
-            font-size: 1.6rem;
-            color: #1a1a1a;
-            margin-bottom: 25px;
-            font-weight: 500;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: -0.5px;
+            font-size: 1.4rem;
+            color: #111;
+            margin-bottom: 20px;
+            font-weight: 400;
+            font-family: 'EB Garamond', serif;
+            letter-spacing: 0;
         }
         .social-media-grid {
             display: grid;
@@ -514,11 +470,8 @@
             width: 100%;
             overflow: hidden;
             margin: 30px 0 60px 0;
-            background: white;
+            background: #fff;
             padding: 30px 0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-            border-top: 1px solid rgba(0,0,0,0.05);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         .work-carousel-track {
             display: flex;
@@ -569,38 +522,38 @@
             background: white;
         }
         .anteros-main-title {
-            font-size: 6rem;
-            font-weight: 500;
-            color: #1a1a1a;
-            letter-spacing: -3px;
-            margin-bottom: 25px;
-            font-family: 'Montserrat', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 400;
+            color: #111;
+            letter-spacing: 0;
+            margin-bottom: 20px;
+            font-family: 'EB Garamond', serif;
         }
         .anteros-subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 400;
-            color: #666;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-family: 'Inter', sans-serif;
+            color: #aaa;
+            letter-spacing: 0;
+            font-style: italic;
+            font-family: 'EB Garamond', serif;
         }
         .anteros-website-link {
             display: inline-block;
-            margin-top: 20px;
-            font-size: 1rem;
-            color: #1a1a1a;
+            margin-top: 16px;
+            font-size: 0.95rem;
+            color: #999;
             text-decoration: none;
-            font-family: 'Inter', sans-serif;
-            border-bottom: 1px solid #1a1a1a;
+            font-family: 'EB Garamond', serif;
+            border-bottom: 1px solid #ddd;
             padding-bottom: 2px;
-            transition: opacity 0.3s;
+            transition: color 0.2s;
         }
         .anteros-website-link:hover {
-            opacity: 0.6;
+            color: #111;
         }
         .anteros-carousel-section {
-            padding: 80px 0;
-            background: #f9f9f8;
+            padding: 60px 0;
+            background: #fff;
         }
         /* Anteros Content Section */
         .anteros-content-section {
@@ -612,11 +565,11 @@
             justify-content: center;
         }
         .anteros-body-text {
-            font-size: 1.3rem;
-            line-height: 2;
-            color: #4a4a4a;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #555;
             font-weight: 400;
-            font-family: 'Inter', sans-serif;
+            font-family: 'EB Garamond', serif;
             max-width: 900px;
             margin: 0 auto;
         }
@@ -637,12 +590,12 @@
             text-align: center;
         }
         .horizontal-title {
-            font-size: 1.8rem;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin-bottom: 25px;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: -0.5px;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #111;
+            margin-bottom: 20px;
+            font-family: 'EB Garamond', serif;
+            letter-spacing: 0;
         }
         .horizontal-image {
             width: 100%;
@@ -674,7 +627,7 @@
             background: white;
         }
         .social-section {
-            background: #fafaf9;
+            background: #fff;
         }
         .events-section {
             background: white;
@@ -684,43 +637,39 @@
             width: 100%;
         }
         .section-title {
-            font-size: 4.5rem;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin-bottom: 35px;
-            letter-spacing: -2px;
-            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: #111;
+            margin-bottom: 24px;
+            letter-spacing: 0;
+            font-family: 'EB Garamond', serif;
         }
         .section-divider {
-            width: 100px;
-            height: 1px;
-            background: #1a1a1a;
-            margin-bottom: 45px;
+            display: none;
         }
         .section-description {
-            font-size: 1.3rem;
-            line-height: 2;
-            color: #4a4a4a;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #555;
             font-weight: 400;
-            margin-bottom: 70px;
+            margin-bottom: 48px;
             max-width: 700px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'EB Garamond', serif;
         }
         .content-spacer {
             height: 70px;
         }
         .content-placeholder {
-            padding: 100px 50px;
-            background: #f9f9f8;
+            padding: 80px 50px;
+            background: #fff;
             border-radius: 0;
             text-align: center;
-            border: 1px solid rgba(0,0,0,0.05);
         }
         .content-placeholder p {
-            font-size: 1.1rem;
-            color: #999;
+            font-size: 1rem;
+            color: #bbb;
             font-style: italic;
-            font-family: 'Inter', sans-serif;
+            font-family: 'EB Garamond', serif;
             font-weight: 400;
         }
         /* Carousel */
@@ -751,18 +700,19 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(26, 26, 26, 0.7);
-            color: white;
+            background: rgba(255,255,255,0.85);
+            color: #111;
             border: none;
-            padding: 18px 22px;
-            font-size: 1.3rem;
+            padding: 12px 16px;
+            font-size: 1rem;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.2s;
             z-index: 10;
             border-radius: 0;
+            font-family: 'EB Garamond', serif;
         }
         .carousel-nav:hover {
-            background: rgba(26, 26, 26, 0.95);
+            opacity: 0.6;
         }
         .carousel-nav.prev {
             left: 10px;
@@ -887,7 +837,7 @@
             right: 0;
             color: rgba(255, 255, 255, 0.92);
             font-size: 0.6rem;
-            font-family: 'Inter', sans-serif;
+            font-family: 'EB Garamond', serif;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             padding: 5px 8px;
@@ -916,29 +866,68 @@
 <body>
     <!-- HOME PAGE -->
     <div id="home">
-        <div class="widgets-container">
-            <div class="widget work-widget">
-                <div class="note-card-wrap">
-                    <div class="note-card">
-                        <div class="note-link" onclick="navigate('creative')">creative production</div>
-                        <div class="note-link" onclick="navigate('photovideo')">photo + video content</div>
-                        <div class="note-link" onclick="navigate('socialmedia')">social media</div>
-                        <div class="note-link" onclick="window.open('https://substack.com/@oliviasalazzar','_blank')">written work</div>
-                        <div class="note-link" onclick="navigate('events')">event production</div>
-                    </div>
-                </div>
-            </div>
-            <div class="widget about-widget" onclick="navigate('about')">
-                <img src="https://i.imgur.com/Ux6DKxL.png" alt="About Me">
+        <div class="home-top">
+            <div class="home-name">Olivia Salazar-Hudgins</div>
+            <div class="home-nav-links">
+                <a onclick="navigate('about')">About</a>
+                <a href="https://substack.com/@oliviasalazzar" target="_blank">Writing</a>
+                <a onclick="openModal('contact')">Contact</a>
             </div>
         </div>
-        <div class="footer">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-title" onclick="openModal('contact')">CONTACT</div>
+
+        <div class="home-main">
+            <!-- Left: full-height image, swaps on category hover -->
+            <div class="home-left">
+                <img id="homeLeftDefault" src="https://i.imgur.com/tR7xH29.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 0.4s ease;">
+                <img id="homeLeftHover"   src="" alt=""                          style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:55%;max-height:65%;width:auto;height:auto;object-fit:contain;opacity:0;transition:opacity 0.4s ease;">
+            </div>
+
+            <!-- Right: bio + categories -->
+            <div class="home-right">
+                <div class="home-bio">
+                    Creative producer and director working across fashion, events, and brand storytelling.
                 </div>
-                <div class="footer-section">
-                    <div class="footer-title" onclick="openModal('social')">SOCIAL MEDIA</div>
+                <div class="home-categories">
+                    <div class="home-category"
+                        onmouseenter="homeHover('photovideo')"
+                        onmouseleave="homeUnhover()"
+                        onclick="navigate('photovideo')">
+                        <div>
+                            <div class="home-cat-name">Captured</div>
+                            <div class="home-cat-sub">photo &amp; video</div>
+                        </div>
+                        <div class="home-cat-arrow">↗</div>
+                    </div>
+                    <div class="home-category"
+                        onmouseenter="homeHover('socialmedia')"
+                        onmouseleave="homeUnhover()"
+                        onclick="navigate('socialmedia')">
+                        <div>
+                            <div class="home-cat-name">Social Media</div>
+                            <div class="home-cat-sub">content &amp; strategy</div>
+                        </div>
+                        <div class="home-cat-arrow">↗</div>
+                    </div>
+                    <div class="home-category"
+                        onmouseenter="homeHover('events')"
+                        onmouseleave="homeUnhover()"
+                        onclick="navigate('events')">
+                        <div>
+                            <div class="home-cat-name">Events</div>
+                            <div class="home-cat-sub">production &amp; on-site</div>
+                        </div>
+                        <div class="home-cat-arrow">↗</div>
+                    </div>
+                    <div class="home-category"
+                        onmouseenter="homeHover('creative')"
+                        onmouseleave="homeUnhover()"
+                        onclick="navigate('creative')">
+                        <div>
+                            <div class="home-cat-name">Brand / Marketing</div>
+                            <div class="home-cat-sub">direction &amp; strategy</div>
+                        </div>
+                        <div class="home-cat-arrow">↗</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -981,15 +970,17 @@
     <!-- ABOUT ME PAGE -->
     <div id="about" class="page">
         <button class="back-button" onclick="navigate('home')">&larr; Back to Home</button>
-        <h2 class="page-title">About Me</h2>
+        <div style="text-align: center; margin-bottom: 40px;">
+            <img src="https://i.imgur.com/Ux6DKxL.png" alt="Olivia Salazar-Hudgins" style="max-width: 204px; width: 100%; height: auto; display: inline-block;">
+        </div>
         <div class="about-content">
-            <p>I'm a creative professional specializing in social media management, content creation, and creative direction. With experience across fashion, events, and digital platforms, I bring brands to life through compelling visual storytelling and strategic content.</p>
-            <br><br>
-            <p>My work spans from organizing fashion shows to managing social media campaigns, always with a focus on authenticity and engagement.</p>
-            <br><br>
-            <p>My major at NYU Gallatin School was an individually designed major concentrating in Media Culture and Critical Theory with an emphasis in fashion and writing.</p>
-            <br><br>
-            <p>In my free time, I love to analyze how culture, history, and societal trends show up in fashion, as I write about in my <a href="https://substack.com/@oliviasalazzar" target="_blank" rel="noopener" style="color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">Substack</a>.</p>
+            <p>I'm a creative professional specializing in social media management, writing, content creation, and creative direction, with a particular focus on fashion. As the sole in-house lead on PR, influencer relations, and creative strategy for The Anteros, a luxury womenswear brand, I manage the full scope of how a brand shows up publicly — from content calendars to press outreach to campaign direction.</p>
+            <br>
+            <p>My work spans organizing and directing large-scale fashion events, including a sold-out 400-person fashion show, to co-founding and running Sto Mercerie, a vintage designer handbag resale brand, where I handle everything from sourcing to marketing. Across my own platforms, the same approach has generated over a million organic views, which tells me the strategy translates — it's not just brand-specific instinct; it's a repeatable understanding of what makes content resonate.</p>
+            <br>
+            <p>What sets my approach apart is the lens I bring to it. My major at NYU Gallatin School was an individually designed concentration in Media, Culture, and Critical Theory with an emphasis in fashion and creative nonfiction — so I don't just create content; I understand the cultural and historical context that makes it meaningful. I truly love absorbing and creating media that resonates and builds meaningful impact within a community or brand.</p>
+            <br>
+            <p>In my free time, I write about how culture, history, and societal trends show up in fashion on my <a href="https://substack.com/@oliviasalazzar" target="_blank" rel="noopener" style="color: #111; text-decoration: none; border-bottom: 1px solid #ccc; padding-bottom: 1px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">Substack</a>, which keeps that critical perspective sharp and current.</p>
         </div>
     </div>
     <!-- MY WORK PAGE -->
@@ -1154,7 +1145,7 @@
                     </div>
                     <div>
                         <p>Anteros Chapter III expanded the brand's assortment with additional styles, new colorways, and the introduction of merino wool. Supported the launch through hands-on involvement in design and pattern discussions, contributing to decision-making around silhouettes, materials, and production considerations. Worked closely with the Creative Director and Founder to coordinate shoot-day logistics, prepare styling documents, lookbooks, and mood boards, and served as a production assistant on set for both editorial and e-commerce shoots. Ensured schedules, assets, and on-set needs were executed efficiently to support a smooth production workflow from pre-production through final capture.</p>
-                        <p style="margin-top: 20px;"><span onclick="openChapterCreativeModal()" style="cursor: pointer; color: #1a1a1a; font-family: 'Inter', sans-serif; font-size: 1rem; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">view creative process here</span></p>
+                        <p style="margin-top: 20px;"><span onclick="openChapterCreativeModal()" style="cursor: pointer; color: #1a1a1a; font-family: 'EB Garamond', serif; font-size: 1rem; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">view creative process here</span></p>
                     </div>
                 </div>
 
@@ -1220,8 +1211,8 @@
                 </div>
 
                 <div style="margin-top: 40px;">
-                    <h3 style="font-size: 1.5rem; color: #1a1a1a; margin-bottom: 6px; font-weight: 500; font-family: 'Montserrat', sans-serif;">Content Gallery</h3>
-                    <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.3px; margin-bottom: 25px;">All images taken by me</p>
+                    <h3 style="font-size: 1.5rem; color: #1a1a1a; margin-bottom: 6px; font-weight: 500; font-family: 'EB Garamond', serif;">Content Gallery</h3>
+                    <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'EB Garamond', serif; font-weight: 400; letter-spacing: 0.3px; margin-bottom: 25px;">All images taken by me</p>
                     <div class="social-media-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
                         <img src="https://i.imgur.com/TWwaDsP.jpeg" alt="Anteros Content 1" style="width: 100%; height: auto;">
                         <img src="https://i.imgur.com/ocMIOLi.jpeg" alt="Anteros Content 2" style="width: 100%; height: auto;">
@@ -1270,7 +1261,7 @@
                         <div class="photo-credit-wrap" data-credit="Photo: Aysia Morotta"><img src="https://i.imgur.com/70euHlT.jpeg" alt="NYFW 2025 Event 4" style="width: 100%; height: auto;"></div>
                         <div class="photo-credit-wrap" data-credit="Photo: Aysia Morotta"><img src="https://i.imgur.com/Wtv8qS4.jpeg" alt="NYFW 2025 Event 5" style="width: 100%; height: auto;"></div>
                     </div>
-                    <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.3px; margin-top: 15px; text-align: center;">NYFW event 2025</p>
+                    <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'EB Garamond', serif; font-weight: 400; letter-spacing: 0.3px; margin-top: 15px; text-align: center;">NYFW event 2025</p>
                 </div>
 
                 <div style="margin-top: 50px;">
@@ -1279,7 +1270,7 @@
                         <img src="https://i.imgur.com/Rbwnaqh.jpeg" alt="Beverly Hills Pop Up 2" style="width: 100%; height: auto;">
                         <img src="https://i.imgur.com/Wf1JBsc.jpeg" alt="Beverly Hills Pop Up 3" style="width: 100%; height: auto;">
                     </div>
-                    <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.3px; margin-top: 15px; text-align: center;">Beverly Hills pop up</p>
+                    <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'EB Garamond', serif; font-weight: 400; letter-spacing: 0.3px; margin-top: 15px; text-align: center;">Beverly Hills pop up</p>
                 </div>
 
                 <div style="margin-top: 50px;">
@@ -1290,7 +1281,7 @@
                         <img src="https://i.imgur.com/zKs4npx.jpeg" alt="WSA Pop Up 4" style="width: 100%; height: auto;">
                         <img src="https://i.imgur.com/J9m9Pi2.jpeg" alt="WSA Pop Up 5" style="width: 100%; height: auto;">
                     </div>
-                    <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.3px; margin-top: 15px; text-align: center;">Private appointment pop up @ WSA</p>
+                    <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'EB Garamond', serif; font-weight: 400; letter-spacing: 0.3px; margin-top: 15px; text-align: center;">Private appointment pop up @ WSA</p>
                 </div>
 
                 <div style="margin-top: 50px;">
@@ -1300,7 +1291,7 @@
                         <div class="photo-credit-wrap" data-credit="Photo: Ethan Ogrady"><img src="https://i.imgur.com/AEMVd48.jpeg" alt="Paris Fashion Week 3" style="width: 100%; height: auto;"></div>
                         <div class="photo-credit-wrap" data-credit="Photo: Ethan Ogrady"><img src="https://i.imgur.com/2Mcw9wz.jpeg" alt="Paris Fashion Week 4" style="width: 100%; height: auto;"></div>
                     </div>
-                    <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.3px; margin-top: 15px; text-align: center;">Paris fashion week: Van Etten showroom</p>
+                    <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'EB Garamond', serif; font-weight: 400; letter-spacing: 0.3px; margin-top: 15px; text-align: center;">Paris fashion week: Van Etten showroom</p>
                 </div>
 
                 <div style="margin-top: 50px;">
@@ -1311,7 +1302,7 @@
                         <img src="https://i.imgur.com/k27pqn7.jpeg" alt="Merci Cest Vintage Holiday Pop Up 4" style="width: 100%; height: auto;">
                         <img src="https://i.imgur.com/gn2L0YP.jpeg" alt="Merci Cest Vintage Holiday Pop Up 5" style="width: 100%; height: auto;">
                     </div>
-                    <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.3px; margin-top: 15px; text-align: center;">Merci Cest Vintage Holiday Pop Up</p>
+                    <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'EB Garamond', serif; font-weight: 400; letter-spacing: 0.3px; margin-top: 15px; text-align: center;">Merci Cest Vintage Holiday Pop Up</p>
                 </div>
             </div>
         </div>
@@ -1345,7 +1336,7 @@
                                 <img src="https://i.imgur.com/YjMTY3Y.png" alt="Social Media Content 3">
                             </div>
 
-                            <h5 style="font-size: 1.3rem; color: #1a1a1a; margin-top: 40px; margin-bottom: 20px; font-weight: 500; font-family: 'Montserrat', sans-serif;">Instagram Stories</h5>
+                            <h5 style="font-size: 1.3rem; color: #1a1a1a; margin-top: 40px; margin-bottom: 20px; font-weight: 500; font-family: 'EB Garamond', serif;">Instagram Stories</h5>
                             <div class="social-media-grid" style="grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));">
                                 <img src="https://i.imgur.com/IFdjiD3.png" alt="Instagram Story 1" style="max-width: 50%;">
                                 <img src="https://i.imgur.com/2QroDbw.png" alt="Instagram Story 2" style="max-width: 50%;">
@@ -1379,14 +1370,14 @@
         <button class="back-button" onclick="navigate('home')">&larr; Back</button>
         <h2 class="page-title" style="margin-bottom: 15px;">Rue &acirc; Vous</h2>
         <div style="text-align: center; margin-bottom: 60px;">
-            <a href="https://www.instagram.com/rueavous?igsh=MWV0MHIzeXZuY2M0aw==" target="_blank" rel="noopener" style="display: inline-block; font-size: 1rem; color: #1a1a1a; text-decoration: none; font-family: 'Inter', sans-serif; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">@rueavous</a>
+            <a href="https://www.instagram.com/rueavous?igsh=MWV0MHIzeXZuY2M0aw==" target="_blank" rel="noopener" style="display: inline-block; font-size: 1rem; color: #1a1a1a; text-decoration: none; font-family: 'EB Garamond', serif; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">@rueavous</a>
         </div>
 
         <div class="role-detail">
             <h3>Creative Director</h3>
-            <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.3px; margin-bottom: 20px;">All photos taken by me</p>
+            <p style="font-size: 0.8rem; color: #888; font-style: italic; font-family: 'EB Garamond', serif; font-weight: 400; letter-spacing: 0.3px; margin-bottom: 20px;">All photos taken by me</p>
             <p>Directing the visual identity, brand narrative, and creative strategy for Rue &agrave; Vous, a fine jewelry brand rooted in storytelling and timeless design. Currently overseeing concept development, aesthetic direction, and launch planning.</p>
-            <p style="margin-top: 20px;"><span onclick="openRueProcessModal()" style="cursor: pointer; color: #1a1a1a; font-family: 'Inter', sans-serif; font-size: 1rem; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">view creative process here</span></p>
+            <p style="margin-top: 20px;"><span onclick="openRueProcessModal()" style="cursor: pointer; color: #1a1a1a; font-family: 'EB Garamond', serif; font-size: 1rem; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">view creative process here</span></p>
             <div style="margin-top: 40px; text-align: center;">
                 <img src="https://i.imgur.com/aaHKxVl.png" alt="Rue &agrave; Vous" style="max-width: 100%; height: auto; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
             </div>
@@ -1432,31 +1423,31 @@
             <p>Producing freelance social media content and visual storytelling for one of themall.app's founders, supporting her personal platform through curated videography and creative direction. Focusing primarily on video content that captures authentic moments and brand narrative, translating her voice and perspective into compelling digital media optimized for audience engagement and platform-specific distribution.</p>
 
             <div style="margin-top: 50px;">
-                <h4 style="font-size: 1.6rem; color: #1a1a1a; margin-bottom: 30px; font-weight: 500; font-family: 'Montserrat', sans-serif; text-align: center;">Content for Sreya Halder</h4>
+                <h4 style="font-size: 1.6rem; color: #1a1a1a; margin-bottom: 30px; font-weight: 500; font-family: 'EB Garamond', serif; text-align: center;">Content for Sreya Halder</h4>
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; max-width: 700px; margin: 0 auto;">
                     <a href="https://www.instagram.com/reel/DUoAhSMjuFB/?igsh=MXQ1eHdpdmRxejBudA==" target="_blank" style="display: block; border: 1px solid #ddd; padding: 15px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; text-decoration: none; color: #1a1a1a; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                         <div style="width: 100%; padding-bottom: 100%; position: relative; background: #f5f5f5; margin-bottom: 12px;">
                             <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2rem;">&#128249;</span>
                         </div>
-                        <span style="font-size: 0.85rem; font-family: 'Inter', sans-serif; font-weight: 500;">View on Instagram &rarr;</span>
+                        <span style="font-size: 0.85rem; font-family: 'EB Garamond', serif; font-weight: 500;">View on Instagram &rarr;</span>
                     </a>
                     <a href="https://www.instagram.com/reel/DUdtyPNDhv5/?igsh=cTZsMTM4NzlpdnB0" target="_blank" style="display: block; border: 1px solid #ddd; padding: 15px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; text-decoration: none; color: #1a1a1a; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                         <div style="width: 100%; padding-bottom: 100%; position: relative; background: #f5f5f5; margin-bottom: 12px;">
                             <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2rem;">&#128249;</span>
                         </div>
-                        <span style="font-size: 0.85rem; font-family: 'Inter', sans-serif; font-weight: 500;">View on Instagram &rarr;</span>
+                        <span style="font-size: 0.85rem; font-family: 'EB Garamond', serif; font-weight: 500;">View on Instagram &rarr;</span>
                     </a>
                     <a href="https://www.instagram.com/reel/DUYR2GLDbS5/?igsh=ZHlmZXQ3YWU4dXht" target="_blank" style="display: block; border: 1px solid #ddd; padding: 15px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; text-decoration: none; color: #1a1a1a; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                         <div style="width: 100%; padding-bottom: 100%; position: relative; background: #f5f5f5; margin-bottom: 12px;">
                             <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2rem;">&#128249;</span>
                         </div>
-                        <span style="font-size: 0.85rem; font-family: 'Inter', sans-serif; font-weight: 500;">View on Instagram &rarr;</span>
+                        <span style="font-size: 0.85rem; font-family: 'EB Garamond', serif; font-weight: 500;">View on Instagram &rarr;</span>
                     </a>
                     <a href="https://www.instagram.com/reel/DUTIRwtDjIG/?igsh=N3A4Nm43M2Yyazh5" target="_blank" style="display: block; border: 1px solid #ddd; padding: 15px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; text-decoration: none; color: #1a1a1a; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                         <div style="width: 100%; padding-bottom: 100%; position: relative; background: #f5f5f5; margin-bottom: 12px;">
                             <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2rem;">&#128249;</span>
                         </div>
-                        <span style="font-size: 0.85rem; font-family: 'Inter', sans-serif; font-weight: 500;">View on Instagram &rarr;</span>
+                        <span style="font-size: 0.85rem; font-family: 'EB Garamond', serif; font-weight: 500;">View on Instagram &rarr;</span>
                     </a>
                 </div>
             </div>
@@ -1558,6 +1549,23 @@
             audio.volume = 0.3;
             audio.play().catch(err => console.log('Audio play failed:', err));
         }
+        const homeImgSrcs = {
+            'photovideo': 'https://i.imgur.com/6u5KgKE.jpeg',
+            'socialmedia': 'https://i.imgur.com/rzg2NEF.jpeg',
+            'events':      'https://i.imgur.com/R82QC1H.jpeg',
+            'creative':    'https://i.imgur.com/B7Nn8yv.jpeg'
+        };
+        function homeHover(id) {
+            const hover = document.getElementById('homeLeftHover');
+            hover.src = homeImgSrcs[id];
+            hover.style.opacity = '1';
+            document.getElementById('homeLeftDefault').style.opacity = '0';
+        }
+        function homeUnhover() {
+            document.getElementById('homeLeftHover').style.opacity = '0';
+            document.getElementById('homeLeftDefault').style.opacity = '1';
+        }
+
         function navigate(pageId) {
             playClickSound();
             document.getElementById('home').style.display = 'none';
