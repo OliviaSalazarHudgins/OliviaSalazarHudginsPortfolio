@@ -878,7 +878,7 @@
         <div class="home-main">
             <!-- Left: full-height image, swaps on category hover -->
             <div class="home-left">
-                <img id="homeLeftDefault" src="https://i.imgur.com/tR7xH29.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 0.4s ease;">
+                <img id="homeLeftDefault" src="https://i.imgur.com/tR7xH29.png" alt="" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:75%;max-height:75%;width:auto;height:auto;object-fit:contain;transition:opacity 0.4s ease;">
                 <img id="homeLeftHover"   src="" alt=""                          style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:55%;max-height:65%;width:auto;height:auto;object-fit:contain;opacity:0;transition:opacity 0.4s ease;">
             </div>
 
@@ -891,7 +891,8 @@
                     <div class="home-category"
                         onmouseenter="homeHover('photovideo')"
                         onmouseleave="homeUnhover()"
-                        onclick="navigate('photovideo')">
+                        ontouchstart="homeTouchHover('photovideo', event)"
+                        onclick="homeNavigate('photovideo')">
                         <div>
                             <div class="home-cat-name">Captured</div>
                             <div class="home-cat-sub">photo &amp; video</div>
@@ -901,7 +902,8 @@
                     <div class="home-category"
                         onmouseenter="homeHover('socialmedia')"
                         onmouseleave="homeUnhover()"
-                        onclick="navigate('socialmedia')">
+                        ontouchstart="homeTouchHover('socialmedia', event)"
+                        onclick="homeNavigate('socialmedia')">
                         <div>
                             <div class="home-cat-name">Social Media</div>
                             <div class="home-cat-sub">content &amp; strategy</div>
@@ -911,7 +913,8 @@
                     <div class="home-category"
                         onmouseenter="homeHover('events')"
                         onmouseleave="homeUnhover()"
-                        onclick="navigate('events')">
+                        ontouchstart="homeTouchHover('events', event)"
+                        onclick="homeNavigate('events')">
                         <div>
                             <div class="home-cat-name">Events</div>
                             <div class="home-cat-sub">production &amp; on-site</div>
@@ -921,7 +924,8 @@
                     <div class="home-category"
                         onmouseenter="homeHover('creative')"
                         onmouseleave="homeUnhover()"
-                        onclick="navigate('creative')">
+                        ontouchstart="homeTouchHover('creative', event)"
+                        onclick="homeNavigate('creative')">
                         <div>
                             <div class="home-cat-name">Brand / Marketing</div>
                             <div class="home-cat-sub">direction &amp; strategy</div>
@@ -1564,6 +1568,18 @@
         function homeUnhover() {
             document.getElementById('homeLeftHover').style.opacity = '0';
             document.getElementById('homeLeftDefault').style.opacity = '1';
+        }
+        let touchedId = null;
+        function homeTouchHover(id, event) {
+            if (touchedId !== id) {
+                event.preventDefault(); // block navigation, just show image
+                touchedId = id;
+                homeHover(id);
+            }
+            // second tap on same id: let click fire → navigate
+        }
+        function homeNavigate(id) {
+            navigate(id);
         }
 
         function navigate(pageId) {
