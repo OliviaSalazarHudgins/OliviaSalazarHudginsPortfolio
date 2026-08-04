@@ -851,7 +851,7 @@
                 flex-shrink: 0;
             }
             .home-main {
-                grid-template-columns: 56vw 1fr;
+                grid-template-columns: 60vw 1fr;
                 min-height: 0;
             }
             #homeLeftDefault {
@@ -864,7 +864,7 @@
                 object-fit: contain !important;
             }
             .home-right {
-                padding: 8px 4px 8px 2px;
+                padding: 8px 6px 8px 0;
                 justify-content: center;
             }
             .home-bio {
@@ -875,15 +875,22 @@
                 gap: 12px;
                 flex: 0 0 auto;
             }
+            .home-category {
+                justify-content: flex-end;
+                gap: 6px;
+            }
+            .home-cat-arrow {
+                order: -1;
+                font-size: 0.72rem;
+            }
             .home-cat-name {
                 font-size: 0.82rem;
+                text-align: right;
             }
             .home-cat-sub {
                 font-size: 0.62rem;
                 margin-top: 0;
-            }
-            .home-cat-arrow {
-                font-size: 0.72rem;
+                text-align: right;
             }
         }
         /* Photo credit tooltip */
