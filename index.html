@@ -824,34 +824,47 @@
             .modal-text {
                 font-size: 1rem;
             }
-            /* Home page mobile: stack vertically */
+            /* Home page mobile: image left, categories right, no scroll */
             #home {
-                overflow-y: auto;
-                height: auto;
-                min-height: 100vh;
+                overflow: hidden;
+                height: 100vh;
             }
             .home-top {
-                padding: 20px 24px;
+                padding: 14px 18px;
+            }
+            .home-name {
+                font-size: 0.85rem;
+            }
+            .home-nav-links {
+                gap: 18px;
+            }
+            .home-nav-links a {
+                font-size: 0.85rem;
             }
             .home-main {
-                grid-template-columns: 1fr;
+                grid-template-columns: 45vw 1fr;
                 min-height: 0;
             }
-            .home-left {
-                height: 70vw;
-                max-height: 320px;
-                min-height: 220px;
-            }
             .home-right {
-                padding: 28px 24px 48px;
-            }
-            .home-categories {
-                justify-content: flex-start;
-                gap: 28px;
+                padding: 14px 16px;
+                justify-content: center;
             }
             .home-bio {
-                margin-bottom: 28px;
-                max-width: 100%;
+                display: none;
+            }
+            .home-categories {
+                justify-content: space-evenly;
+                gap: 0;
+                flex: 1;
+            }
+            .home-cat-name {
+                font-size: 0.9rem;
+            }
+            .home-cat-sub {
+                display: none;
+            }
+            .home-cat-arrow {
+                font-size: 0.8rem;
             }
         }
         /* Photo credit tooltip */
@@ -971,7 +984,7 @@
             <button class="close-btn" onclick="closeModal('contact')">&times;</button>
             <h2 class="modal-title">Contact</h2>
             <div class="modal-text">
-                <p><a href="mailto:oliviash333@gmail.com" class="modal-link">oliviash333@gmail.com</a></p>
+                <p><a href="mailto:oliviasalazarhudgins@outlook.com" class="modal-link">oliviasalazarhudgins@outlook.com</a></p>
             </div>
         </div>
     </div>
